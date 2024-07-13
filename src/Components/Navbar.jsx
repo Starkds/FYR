@@ -3,38 +3,38 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <nav className="w-screen flex  h-screen   flex-col "  >
-      <div className="w-screen flex flex-row h-screen justify-between  bg-green-400 items-center  " >
+    <nav className="w-screen flex  h-16    flex-col  items-center"  >
+      <div className="w-11/12 flex flex-row h-20 justify-between items-center  " >
         <div className="">
-          <img  className="h-6 w-8" src="./images/Company-logo.png" />
+          <img className="h-18 w-28" src="./images/Company-logo.png" />
         </div>
-        <div className="  ">
-          <ul className="  ">
-            <li className="">
-            Home
+        <div className="w-82 flex flex-row  items-center justify-between   ">
+          <ul className=" w-80  justify-around flex flex-row  col-gap-3 text-lg font-semibold  ">
+            <li>
+              Home
             </li>
             <li>
-             About
+              About
             </li>
             <li>
-             Contact
+              Contact
             </li>
           </ul>
         </div>
 
-        <div className="Search-bar">
-       
-            <button>login</button>
-          
+        <div className="flex  gap-10 w-50 text-lg">
 
-         
-            <button>Become a Tenant</button>
-          
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 border border-red-400 rounded">login</button>
+
+
+
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 border border-red-400 rounded" >Become a Tenant</button>
+
         </div>
 
       </div>
 
-      
+
     </nav>
   )
 }
