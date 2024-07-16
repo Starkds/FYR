@@ -37,11 +37,11 @@ function Sidebar() {
             <label className='font-semibold'>Rental Type</label>
 <div className='flex gap-2'>
 <input  type="checkbox" id="1room" name="rentalType" value="1 room" />
-<label  className='border-2 border-solid  border-black w-20 h-7 rounded-sm'  for="1room">1 room</label>
+<label  className='border-2 border-solid  border-black w-20 h-7 rounded-sm'  htmlFor="1room">1 room</label>
 <input type="checkbox" id="2bhk" name="rentalType" value="2 BHK" />
-<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' for="2bhk">2 BHK</label>
+<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' htmlFor="2bhk">2 BHK</label>
 <input type="checkbox" id="3bhk" name="rentalType" value="3 BHK" />
-<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' for="3bhk">3 BHK</label>
+<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' htmlFor="3bhk">3 BHK</label>
 </div>
             </div>
         </div>
@@ -52,11 +52,11 @@ function Sidebar() {
           <label className='font-semibold'>Facilties</label>
 <div className='flex gap-2 flex-row'>
 <input  type="checkbox" id="1room" name="rentalType" value="1 room" />
-<label  className='border-2 border-solid  border-black w-20 h-7 rounded-sm'  for="1room">Balcony</label>
+<label  className='border-2 border-solid  border-black w-20 h-7 rounded-sm'  htmlFor="1room">Balcony</label>
 <input type="checkbox" id="2bhk" name="rentalType" value="2 BHK" />
-<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' for="2bhk">Park</label>
+<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' htmlFor="2bhk">Park</label>
 <input type="checkbox" id="3bhk" name="rentalType" value="3 BHK" />
-<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' for="3bhk"> personal Gate</label>
+<label className='border-2 border-solid  border-black w-20 h-7 rounded-sm' htmlFor="3bhk"> personal Gate</label>
 </div>
           </div>
         </div>

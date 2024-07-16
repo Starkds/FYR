@@ -13,14 +13,14 @@ function App() {
 
   return (
     <>
-      {/* <Navbar />
-      <Header /> */}
-      {/* <div className="flex mt-10  ">
+       <Navbar />
+      <Header /> 
+       <div className="flex mt-10  ">
       <Sidebar  className="overflow-hidden h-screen" />
       <Livingdetails/>
-      </div> */}
+      </div> 
 
-      <Tenantform/>
+      
 
     </>
   )
