@@ -1,13 +1,27 @@
 import React from 'react'
 import { RiMapPinLine } from "react-icons/ri";
+import Navbar from './Navbar';
+import { FaLocationCrosshairs } from "react-icons/fa6";
 function Header() {
+
   return (
     <>
-     <div>
-     <div className="max-w-md mx-auto">
+  
+
+    <div className='w-3/4 h-28 z-10 top-20 left-96 mt-0  m-5 bg-white fixed  flex  justify-end    '>
+   
+      
+     <div className=" flex flex-row  items-center  gap-9 ml-80  mt-8 justify-center w-3/4 h-fit  z-10 fixed  mx-auto">
+   
+   <div className='flex row flex-row rounded-md items-center gap-24 justify-center border-gray-600 border-solid border-2  w-96 h-10'>
+       <h2 className='flex row justify-center items-center text-sm' >Use your current location</h2>
+      <div className='h-7 w-24 gap-2 flex justify-end items-center rounded-2xl bg-stone-400'> near me <FaLocationCrosshairs/></div> 
+         </div>
+    
+
       <label
         htmlFor="default-search"
-        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        className="mb-2  text-sm font-medium text-gray-900 sr-only dark:text-white"
       >
         Search
       </label>
@@ -42,7 +56,7 @@ function Header() {
           type="button"
           className="text-white absolute end-2.5 bottom-2.5 bg-blue-700  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 "
         >
-          Search
+          S
         </button>
 
         
@@ -50,9 +64,8 @@ function Header() {
       </div>
       
     </div>
-
-  
      </div>
+          
     </>
   )
 }

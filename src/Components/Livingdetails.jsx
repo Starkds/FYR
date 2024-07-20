@@ -1,5 +1,6 @@
 import React from 'react'
 import Livingplace from '../cards/Livingplace';
+import { Link } from 'react-router-dom';
 
 function Livingdetails() {
 
@@ -18,13 +19,19 @@ function Livingdetails() {
         { id:12, img:"./images/Places/place-10.jpg",   name:"mumbai", description:"3bhk with balcony", price:"3000/month"},
     ]
   return (
-    <>
-    <div className='flex flex-row justify-evenly h-fit flex-wrap gap-2'>
+    
+    <Link>
+   
+
+
+
+    <div className='flex flex-row  ml-80  mt-28 justify-end  w-3/4 h-fit flex-wrap gap-10'>
         {destinationcards.map(card => (
             <Livingplace key={card.id} img={card.img} name={card.name} description={card.description} price={card.price} />
         ))}
         </div>
-        </>
+    </Link>
+    
   )
 }
 
