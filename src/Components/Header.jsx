@@ -15,7 +15,7 @@ function Header() {
    
    <div className='flex row flex-row rounded-md items-center gap-24 justify-center border-gray-600 border-solid border-2  w-96 h-10'>
        <h2 className='flex row justify-center items-center text-sm' >Use your current location</h2>
-      <div className='h-7 w-24 gap-2 flex justify-end items-center rounded-2xl bg-stone-400'> near me <FaLocationCrosshairs/></div> 
+      <div className='h-7 w-24 gap-2 flex justify-end items-center rounded-2xl pr-2 bg-stone-400'> near me <FaLocationCrosshairs/></div> 
          </div>
     
 

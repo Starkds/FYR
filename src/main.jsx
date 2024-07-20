@@ -5,13 +5,14 @@ import './index.css'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider , Route } from 'react-router-dom';
 import Layout from './Layout.jsx';
 import Home from './Components/Home.jsx';
-import Livingdetails from './Components/Livingdetails.jsx';
+
 import Login from './pages/Login.jsx';
 import Tenantform from './pages/Tenantform.jsx';
 import Signup from './pages/Signup.jsx';
 import Footer from './Components/Footer.jsx';
 import AboutUs from './Components/AboutUs.jsx';
 import ContactUs from './Components/ContactUs.jsx';
+import PlaceInfo from './cards/PlaceInfo.jsx';
 
 
 const router = createBrowserRouter(
@@ -23,17 +24,18 @@ const router = createBrowserRouter(
       <Route path='SignUp' element={<Signup/>} />
       <Route path='About' element={<AboutUs/>} />
       <Route path='/Contact' element={ <ContactUs/>} />
+      <Route path='/PlaceInfo' element={<PlaceInfo/>} />
           </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router}>
+     {/* <RouterProvider router={router}>
      <App /> 
       
-    </RouterProvider>  
-   
+    </RouterProvider>   */}
+   <PlaceInfo/>
 
    
   </React.StrictMode>
