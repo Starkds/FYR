@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { LuChevronLeft } from "react-icons/lu";
 import { LuChevronRight } from "react-icons/lu";
+import { ImStarFull } from "react-icons/im";
 function PlaceInfo(){
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +24,7 @@ function PlaceInfo(){
     };
     return (
         <>
-        <div >
+        <div  className='mt-14'>
             <div
       className="flex justify-center h-screen w-full"
       style={{ height: '75vh' }}
@@ -46,6 +47,15 @@ function PlaceInfo(){
         >
        <LuChevronRight />
         </button>
+      </div>
+    </div>
+
+
+    <div className='w-3/12 h-fit'>
+      <div> Heaven Inn</div>
+      <div className='flex w-10 '>
+        < ImStarFull/> 
+          4.5  rating 
       </div>
     </div>
         </div>
