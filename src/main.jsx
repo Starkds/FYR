@@ -7,12 +7,12 @@ import Layout from './Layout.jsx';
 import Home from './Components/Home.jsx';
 
 import Login from './pages/Login.jsx';
-import Tenantform from './pages/Tenantform.jsx';
+import Tenantform from './Tenant/Tenantform.jsx';
 import Signup from './pages/Signup.jsx';
-import Footer from './Components/Footer.jsx';
 import AboutUs from './Components/AboutUs.jsx';
 import ContactUs from './Components/ContactUs.jsx';
 import PlaceInfo from './cards/PlaceInfo.jsx';
+import TenantRoomDetails from './Tenant/TenantRoomDetails.jsx';
 
 
 const router = createBrowserRouter(
@@ -25,17 +25,18 @@ const router = createBrowserRouter(
       <Route path='About' element={<AboutUs/>} />
       <Route path='/Contact' element={ <ContactUs/>} />
       <Route path='/PlaceInfo' element={<PlaceInfo/>} />
+      <Route path='TenantRoomDetails' element={<TenantRoomDetails/>} />
           </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router}>
+      <RouterProvider router={router}>
      <App /> 
       
     </RouterProvider>  
-  
+    
     
    
   </React.StrictMode>

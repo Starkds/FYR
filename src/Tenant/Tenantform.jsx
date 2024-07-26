@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-
+import { Link } from 'react-router-dom';
 function Tenantform() {
     const [name , setName] = useState('');
     const [number , setNumber] = useState('');
@@ -82,10 +82,12 @@ function Tenantform() {
             </div>
 
             <div>
-                <button
+             <Link to= '/TenantRoomDetails'>
+             <button
                     className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
                     Submit
                 </button>
+             </Link>   
             </div>
         </form>
     </div>

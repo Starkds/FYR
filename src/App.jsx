@@ -3,7 +3,7 @@ import Header from "./Components/Header"
 import Livingdetails from "./Components/Livingdetails"
 import Sidebar from "./Components/Sidebar"
 import Login from "./pages/Login"
-import Tenantform from "./pages/Tenantform"
+import Tenantform from "./Tenant/Tenantform"
 import Signup from "./pages/Signup"
 import AboutUs from "./Components/AboutUs"
 function App() {
