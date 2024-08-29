@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { IoReorderThreeOutline } from "react-icons/io5";
 
 function Navbar() {
   return (
@@ -9,7 +10,7 @@ function Navbar() {
         <div className="">
           <img className="h-18 w-28" src="./images/Company-logo.png" />
         </div>
-        <div className="w-82 flex flex-row  items-center justify-between   ">
+        <div className="w-82 flex flex-row   items-center justify-between   ">
           <ul className=" w-80  justify-around flex flex-row  col-gap-3 text-lg font-semibold  ">
             <li>
              <NavLink to='/'> Home</NavLink> 
