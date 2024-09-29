@@ -11,11 +11,11 @@ return(
     <div className="flex gap-10">
     <Navbar />
     
-    </div>
+    </div> 
     
-    <Outlet/>
+     <Outlet/>
 
-    <Footer className="z-30" />
+    {/* <Footer className="z-30" />  */}
     </>
 );
 }

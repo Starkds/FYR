@@ -11,8 +11,8 @@ return(<>
 <Link className="Home" to="/">
 <div className="flex  flex-col mt-20 ">
 <Sidebar/>
-<Header/>
- <Livingdetails/>
+{/* <Header/>
+ <Livingdetails/> */}
 </div>
 
 </Link>
