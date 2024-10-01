@@ -147,13 +147,35 @@
 
 
 
-import React from "react";
+import React, { useState } from "react";
 
 function TenantRoomDetails() {
+  // State to track the checked facilities and restrictions
+  const [selectedFacilities, setSelectedFacilities] = useState([]);
+  const [selectedRestrictions, setSelectedRestrictions] = useState([]);
+
+  // Toggle checkbox selection for facilities
+  const handleFacilityChange = (facility) => {
+    setSelectedFacilities((prev) =>
+      prev.includes(facility)
+        ? prev.filter((item) => item !== facility)
+        : [...prev, facility]
+    );
+  };
+
+  // Toggle checkbox selection for restrictions
+  const handleRestrictionChange = (restriction) => {
+    setSelectedRestrictions((prev) =>
+      prev.includes(restriction)
+        ? prev.filter((item) => item !== restriction)
+        : [...prev, restriction]
+    );
+  };
+
   return (
     <>
       <form>
-        <div className="w-screen h-fit my-10 flex flex-col justify-center">
+        <div className="w-screen h-fit mt-24 mb-16 flex flex-col justify-center">
           {/* Personal Address Input */}
           <div className="flex items-center w-11/12 h-20 m-3 p-6 rounded-md border-2 border-gray-300 shadow-lg bg-white">
             <label className="flex w-80 flex-col text-2xl font-semibold leading-5 text-gray-800">
@@ -174,15 +196,24 @@ function TenantRoomDetails() {
               <ul className="flex flex-wrap gap-2">
                 {["Balcony", "Park", "Main Road Connect", "Terrace", "Market"].map((facility) => (
                   <li key={facility}>
-                    <button className="h-9 p-2 bg-purple-200 hover:bg-purple-300 font-semibold text-lg flex items-center justify-center rounded-lg border-2 border-purple-600 transition-all duration-150 ease-in-out">
-                      {facility}
-                    </button>
+                    <label
+                      className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all duration-150 ease-in-out ${
+                        selectedFacilities.includes(facility)
+                          ? "bg-purple-300 border-purple-600"
+                          : "bg-purple-200 border-purple-600"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4"
+                        checked={selectedFacilities.includes(facility)}
+                        onChange={() => handleFacilityChange(facility)}
+                      />
+                      <span className="text-lg font-semibold">{facility}</span>
+                    </label>
                   </li>
                 ))}
               </ul>
-              <button className="w-40 h-10 p-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg flex items-center justify-center rounded-lg border-2 border-blue-700 transition-all duration-150 ease-in-out mt-2">
-                Submit
-              </button>
             </div>
           </div>
 
@@ -195,15 +226,24 @@ function TenantRoomDetails() {
               <ul className="flex flex-wrap gap-2">
                 {["No Personal Gate", "No Late Entry"].map((restriction) => (
                   <li key={restriction}>
-                    <button className="h-9 p-2 bg-purple-200 hover:bg-purple-300 font-semibold text-lg flex items-center justify-center rounded-lg border-2 border-purple-600 transition-all duration-150 ease-in-out">
-                      {restriction}
-                    </button>
+                    <label
+                      className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all duration-150 ease-in-out ${
+                        selectedRestrictions.includes(restriction)
+                          ? "bg-purple-300 border-purple-600"
+                          : "bg-purple-200 border-purple-600"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4"
+                        checked={selectedRestrictions.includes(restriction)}
+                        onChange={() => handleRestrictionChange(restriction)}
+                      />
+                      <span className="text-lg font-semibold">{restriction}</span>
+                    </label>
                   </li>
                 ))}
               </ul>
-              <button className="w-40 h-10 p-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg flex items-center justify-center rounded-lg border-2 border-blue-700 transition-all duration-150 ease-in-out mt-2">
-                Submit
-              </button>
             </div>
           </div>
 
@@ -247,3 +287,4 @@ function TenantRoomDetails() {
 }
 
 export default TenantRoomDetails;
+
