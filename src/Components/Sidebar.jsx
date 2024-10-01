@@ -101,14 +101,49 @@
 
 
 //beta version
+
+
 import React, { useState } from 'react';
 import { FaFilter } from 'react-icons/fa';
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [filter, setFilter] = useState({
+    minPrice: '',
+    maxPrice: '',
+    rentalType: [],
+    facilities: [],
+    persons: []
+  });
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleCheckboxChange = (category, value) => {
+    setFilter((prevFilter) => {
+      const updatedCategory = prevFilter[category].includes(value)
+        ? prevFilter[category].filter((item) => item !== value)
+        : [...prevFilter[category], value];
+      return { ...prevFilter, [category]: updatedCategory };
+    });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFilter((prevFilter) => ({
+      ...prevFilter,
+      [name]: value,
+    }));
+  };
+
+  const isChecked = (category, value) => {
+    return filter[category].includes(value);
+  };
+
+  const applyFilter = () => {
+    console.log("Applied Filters:", filter);
+    // You can add your filtering logic here
   };
 
   return (
@@ -135,9 +170,15 @@ function Sidebar() {
           <div className='flex justify-between'>
             <div className="uppercase tracking-wide text-c2 mb-4">
               <label className='font-semibold text-xs'>Min price</label>
-              <input className='border-2 border-solid border-black w-28 text-xs' list="options" name="option" id="optionInput" /> {/* Reduced size */}
+              <input
+                className='border-2 border-solid border-black w-28 text-xs'
+                list="options"
+                name="minPrice"
+                value={filter.minPrice}
+                onChange={handleInputChange}
+              />
               <datalist id="options">
-                <option value=">1000" />
+                <option value="1000" />
                 <option value="1500" />
                 <option value="1600" />
               </datalist>
@@ -145,11 +186,17 @@ function Sidebar() {
 
             <div className="uppercase tracking-wide text-c2 mb-4">
               <label className='font-semibold text-xs'>Max price</label>
-              <input className='border-2 border-solid border-black w-28 text-xs' list="options" name="option" id="optionInput" /> {/* Reduced size */}
+              <input
+                className='border-2 border-solid border-black w-28 text-xs'
+                list="options"
+                name="maxPrice"
+                value={filter.maxPrice}
+                onChange={handleInputChange}
+              />
               <datalist id="options">
                 <option value="10000" />
                 <option value="15000" />
-                <option value="<16000" />
+                <option value="16000" />
               </datalist>
             </div>
           </div>
@@ -159,11 +206,32 @@ function Sidebar() {
             <div className="pl-2 gap-4 flex flex-col">
               <label className='font-semibold text-xs'>Rental Type</label>
               <div className='flex gap-2'>
-                <input type="checkbox" id="1room" name="rentalType" value="1 room" />
+                <input
+                  type="checkbox"
+                  id="1room"
+                  name="rentalType"
+                  value="1 room"
+                  checked={isChecked('rentalType', '1 room')}
+                  onChange={() => handleCheckboxChange('rentalType', '1 room')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="1room">1 room</label>
-                <input type="checkbox" id="2bhk" name="rentalType" value="2 BHK" />
+                <input
+                  type="checkbox"
+                  id="2bhk"
+                  name="rentalType"
+                  value="2 BHK"
+                  checked={isChecked('rentalType', '2 BHK')}
+                  onChange={() => handleCheckboxChange('rentalType', '2 BHK')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="2bhk">2 BHK</label>
-                <input type="checkbox" id="3bhk" name="rentalType" value="3 BHK" />
+                <input
+                  type="checkbox"
+                  id="3bhk"
+                  name="rentalType"
+                  value="3 BHK"
+                  checked={isChecked('rentalType', '3 BHK')}
+                  onChange={() => handleCheckboxChange('rentalType', '3 BHK')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="3bhk">3 BHK</label>
               </div>
             </div>
@@ -174,11 +242,32 @@ function Sidebar() {
             <div className="pl-2">
               <label className='font-semibold text-xs'>Facilities</label>
               <div className='flex gap-2 flex-row'>
-                <input type="checkbox" id="balcony" name="facilities" value="Balcony" />
+                <input
+                  type="checkbox"
+                  id="balcony"
+                  name="facilities"
+                  value="Balcony"
+                  checked={isChecked('facilities', 'Balcony')}
+                  onChange={() => handleCheckboxChange('facilities', 'Balcony')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="balcony">Balcony</label>
-                <input type="checkbox" id="park" name="facilities" value="Park" />
+                <input
+                  type="checkbox"
+                  id="park"
+                  name="facilities"
+                  value="Park"
+                  checked={isChecked('facilities', 'Park')}
+                  onChange={() => handleCheckboxChange('facilities', 'Park')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="park">Park</label>
-                <input type="checkbox" id="gate" name="facilities" value="Gate" />
+                <input
+                  type="checkbox"
+                  id="gate"
+                  name="facilities"
+                  value="Gate"
+                  checked={isChecked('facilities', 'Gate')}
+                  onChange={() => handleCheckboxChange('facilities', 'Gate')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="gate">Gate</label>
               </div>
             </div>
@@ -189,12 +278,36 @@ function Sidebar() {
             <div className="pl-2">
               <label className='font-semibold text-xs'>No of persons</label>
               <div className='flex gap-2 flex-row'>
-                <input type="checkbox" id="family" name="persons" value="Family" />
+                <input
+                  type="checkbox"
+                  id="family"
+                  name="persons"
+                  value="Family"
+                  checked={isChecked('persons', 'Family')}
+                  onChange={() => handleCheckboxChange('persons', 'Family')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="family">Family</label>
-                <input type="checkbox" id="friends" name="persons" value="Friends" />
+                <input
+                  type="checkbox"
+                  id="friends"
+                  name="persons"
+                  value="Friends"
+                  checked={isChecked('persons', 'Friends')}
+                  onChange={() => handleCheckboxChange('persons', 'Friends')}
+                />
                 <label className='border-solid border-black w-14 h-7 rounded-sm text-xs' htmlFor="friends">Friends</label>
               </div>
             </div>
+          </div>
+
+          {/* Apply Filter Button */}
+          <div className="mt-4 text-center">
+            <button
+              onClick={applyFilter}
+              className="bg-red-500 text-white px-4 py-2 rounded-md text-xs"
+            >
+              Apply Filter
+            </button>
           </div>
         </div>
       </div>
@@ -203,4 +316,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
