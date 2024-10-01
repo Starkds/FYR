@@ -14,7 +14,7 @@ function Tenantform() {
 
   return (
     <>
-    <div className="flex items-center justify-center p-12">
+    <div className="flex items-center mt-20 justify-center p-12">
    
     <div className="mx-auto w-full max-w-[550px] bg-white  border-2  p-10 rounded-sm  border-solid border-black">
         <form>

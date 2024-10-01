@@ -15,7 +15,7 @@ return(
     
      <Outlet/>
 
-    {/* <Footer className="z-30" />  */}
+     <Footer className="z-30" />  
     </>
 );
 }

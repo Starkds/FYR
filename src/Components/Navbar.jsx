@@ -135,8 +135,6 @@
 
 
 
-
-
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { IoReorderThreeOutline } from "react-icons/io5";
@@ -148,15 +146,17 @@ function Navbar() {
     setIsOpen(!isOpen); 
   }
 
+  const handleItemClick = () => {
+    setIsOpen(false); // Close the dropdown when an item is clicked
+  }
+
   return (
     <div className='fixed z-20 bg-stone-300 w-full'>
       <nav className="w-full flex h-20 items-center justify-between px-4">
-    
         <div className="flex items-center">
           <img className="h-16 w-24 md:h-20 md:w-28" src="./images/Company-logo.png" alt="Company Logo" />
         </div>
 
-        
         <div className="md:hidden">
           <IoReorderThreeOutline
             size={30}
@@ -165,53 +165,48 @@ function Navbar() {
           />
         </div>
 
-       
         <div className={`hidden md:flex md:w-full md:items-center md:justify-between`}>
           <ul className="flex flex-row justify-center gap-3 text-base md:text-lg font-semibold flex-grow">
             <li>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/' onClick={handleItemClick}>Home</NavLink>
             </li>
             <li>
-              <NavLink to='/About'>About us</NavLink>
+              <NavLink to='/About' onClick={handleItemClick}>About us</NavLink>
             </li>
             <li>
-              <NavLink to='/Contact'>Contact</NavLink>
+              <NavLink to='/Contact' onClick={handleItemClick}>Contact</NavLink>
             </li>
           </ul>
 
-          
           <div className="flex gap-4 lg:gap-10">
-            <Link to="/Login">
+            <Link to="/Login" onClick={handleItemClick}>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-red-400 rounded">Login</button>
             </Link>
-            <Link to="/Tenantform">
+            <Link to="/Tenantform" onClick={handleItemClick}>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-red-400 rounded">Rent Now</button>
             </Link>
           </div>
         </div>
       </nav>
 
-      
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden w-full bg-stone-300`}>
-        
         <div className="flex flex-col items-end gap-3 py-4 pr-4">
-          <Link to="/Login">
+          <Link to="/Login" onClick={handleItemClick}>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-red-400 rounded w-full max-w-xs">Login</button>
           </Link>
-          <Link to="/Tenantform">
+          <Link to="/Tenantform" onClick={handleItemClick}>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-red-400 rounded w-full max-w-xs whitespace-nowrap">Rent Now</button>
           </Link>
 
-        
           <ul className="flex flex-col items-end gap-4 text-base font-semibold pr-2">
             <li>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/' onClick={handleItemClick}>Home</NavLink>
             </li>
             <li>
-              <NavLink to='/About'>About us</NavLink>
+              <NavLink to='/About' onClick={handleItemClick}>About us</NavLink>
             </li>
             <li>
-              <NavLink to='/Contact'>Contact</NavLink>
+              <NavLink to='/Contact' onClick={handleItemClick}>Contact</NavLink>
             </li>
           </ul>
         </div>
