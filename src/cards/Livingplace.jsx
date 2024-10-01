@@ -118,8 +118,10 @@ import Livingdetails from '../Components/Livingdetails';
 function Livingplace(props) {
   return (
     <Link to={Livingdetails}>
-      <div className="relative flex flex-col w-full max-w-[17rem] mx-auto rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-lg md:max-w-[19rem] lg:max-w-[21rem]">
-        <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
+      {/* For mobile: keep two cards per row (grid-cols-2).
+          For tablet (md) and above: switch to one card per row (grid-cols-1). */}
+      <div className="relative grid grid-cols-2 md:grid-cols-1 gap-4 w-full max-w-full sm:max-w-[16rem] md:max-w-[21rem] lg:max-w-[21rem] mx-auto rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-lg">
+        <div className="relative mx-2 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
           <img className="h-40 w-full object-cover md:h-48 lg:h-60" src={props.img} alt="ui/ux review check" />
           <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
           <button

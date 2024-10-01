@@ -66,8 +66,8 @@ function Livingdetails() {
     return (
         <Link>
             <div className="flex justify-center">
-                {/* Wrapper to apply margin from the right-hand side */}
-                <div className='flex flex-row flex-wrap gap-14 ml-auto mr-0 mt-28 w-full md:w-3/4'>
+                {/* Wrapper to apply responsive margins */}
+                <div className='flex flex-row flex-wrap gap-14 mx-auto mt-28 w-full md:mx-auto lg:ml-auto lg:mr-0 md:w-3/4'>
                     {destinationcards.map(card => (
                         <Livingplace 
                             key={card.id} 
