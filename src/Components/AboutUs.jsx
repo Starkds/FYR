@@ -10,14 +10,14 @@ function AboutUs() {
       </p>
       <div className="flex flex-wrap mb-4">
         <div className="w-full md:w-1/2 xl:w-1/3 p-4">
-          <img src="/public/images/aboutUs-image/img1.jpg" alt="Building Exterior" className="w-full h-64 object-cover rounded-lg mb-4" />
+          <img src="/aboutUs-image/img1.jpg" alt="Building Exterior" className="w-full h-64 object-cover rounded-lg mb-4" />
           <h2 className="text-2xl font-bold mb-2">Our Story</h2>
           <p className="text-lg mb-4">
             Founded in 2024, our team of passionate individuals came together to revolutionize the way people rent houses online. With years of experience in the real estate industry, we knew there had to be a better way to connect renters with landlords.
           </p>
         </div>
         <div className="w-full md:w-1/2 xl:w-1/3 p-4">
-          <img src="/public/images/aboutUs-image/img2.jpg" alt="Modern Living Room" className="w-full h-64 object-cover rounded-lg mb-4" />
+          <img src="/aboutUs-image/img2.jpg" alt="Modern Living Room" className="w-full h-64 object-cover rounded-lg mb-4" />
           <h2 className="text-2xl font-bold mb-2">Our Values</h2>
           <ul className="list-disc pl-4 mb-4">
             <li>Transparency: We believe in providing accurate and up-to-date information to our users.</li>
@@ -26,7 +26,7 @@ function AboutUs() {
           </ul>
         </div>
         <div className="w-full md:w-1/2 xl:w-1/3 p-4">
-          <img src="/public/images/aboutUs-image/img3.jpg" alt="Cityscape" className="w-full h-64 object-cover rounded-lg mb-4" />
+          <img src="/aboutUs-image/img3.jpg" alt="Cityscape" className="w-full h-64 object-cover rounded-lg mb-4" />
           <h2 className="text-2xl font-bold mb-2">Our Team</h2>
           <ul className="list-none pl-0 mb-4">
             <li>
